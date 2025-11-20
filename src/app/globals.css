@@ -151,17 +151,45 @@
   
   /* Gradient text animation */
   @keyframes gradient-shift {
-    0%, 100% {
+    0% {
       background-position: 0% 50%;
     }
     50% {
       background-position: 100% 50%;
     }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
   .animate-gradient {
-    background-size: 200% 200%;
+    background-size: 200% auto;
     animation: gradient-shift 3s ease infinite;
+  }
+  
+  /* Button Shine Effect */
+  @keyframes shine-move {
+    from {
+      transform: translateX(-100%) skewX(-15deg);
+    }
+    to {
+      transform: translateX(200%) skewX(-15deg);
+    }
+  }
+
+  .animate-shine-hover .shine-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-200%) skewX(-15deg);
+    transition: none;
+  }
+
+  .animate-shine-hover:hover .shine-effect {
+    animation: shine-move 0.75s ease-in-out;
   }
   
   /* Glow effect */
