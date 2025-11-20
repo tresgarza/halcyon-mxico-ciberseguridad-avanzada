@@ -1,0 +1,22 @@
+{
+  "name": "Halcyon México - Protección contra Ransomware",
+  "short_name": "Halcyon México",
+  "description": "Representación oficial de Halcyon en México. Ciberseguridad avanzada con IA para proteger la información crítica de tu empresa contra el robo, borrado y cifrado malicioso.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1f3a",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/logo/Halcyon_Icon_RGB_TRI.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/Halcyon_Icon_RGB_TRI.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+

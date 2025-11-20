@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Send } from 'lucide-react';
+import { subtleFadeIn, slideInLeft, slideInRight, buttonHover } from '@/lib/animations';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -38,9 +39,9 @@ export function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
+              variants={slideInLeft}
+              initial="hidden"
+              animate="visible"
             >
               <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
                 Nombre completo *
@@ -57,9 +58,9 @@ export function ContactForm() {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
+              variants={slideInRight}
+              initial="hidden"
+              animate="visible"
             >
               <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
                 Correo electrónico *
@@ -79,9 +80,10 @@ export function ContactForm() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              variants={slideInLeft}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.1 }}
             >
               <label htmlFor="company" className="block text-sm font-medium mb-2 text-white">
                 Empresa *
@@ -98,9 +100,10 @@ export function ContactForm() {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              variants={slideInRight}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.1 }}
             >
               <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white">
                 Teléfono
@@ -118,9 +121,10 @@ export function ContactForm() {
           </div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            variants={subtleFadeIn}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
           >
             <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
               Mensaje *
@@ -137,10 +141,11 @@ export function ContactForm() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            whileHover={{ scale: 1.02 }}
+            variants={subtleFadeIn}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
+            whileHover={buttonHover}
             whileTap={{ scale: 0.98 }}
           >
             <Button 

@@ -1,7 +1,4 @@
 /* Updated: 2025-11-20T04:41:50.586Z */
-/* Updated: 2025-11-14T22:14:24.336Z */
-/* Updated: 2025-11-14T21:56:49.384Z */
-/* Updated: 2025-11-11T22:36:17.774Z */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -144,6 +141,20 @@
     scroll-behavior: smooth;
   }
   
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -206,20 +217,20 @@
     animation: glow 2s ease-in-out infinite;
   }
   
-  /* Pulse animation for icons */
+  /* Pulse animation for icons - Subtle */
   @keyframes pulse-soft {
     0%, 100% {
       opacity: 1;
       transform: scale(1);
     }
     50% {
-      opacity: 0.8;
-      transform: scale(1.05);
+      opacity: 0.9;
+      transform: scale(1.02);
     }
   }
   
   .animate-pulse-soft {
-    animation: pulse-soft 2s ease-in-out infinite;
+    animation: pulse-soft 3s ease-in-out infinite;
   }
   
   /* Shimmer effect */
